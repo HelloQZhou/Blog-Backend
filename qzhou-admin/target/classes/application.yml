@@ -1,0 +1,52 @@
+# 服务器
+#server:
+#  port: 8989
+#spring:
+#  datasource:
+#    url: jdbc:mysql://47.113.228.96:3306/qz_blog?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+#    username: qz_blog
+#    password: zhouq
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#  servlet:
+#    multipart:
+#      max-file-size: 2MB
+#      max-request-size: 5MB
+#  redis:
+#    host: 47.113.228.96
+#    port: 6379
+#    password: zhouq
+
+# 本地 数据库 redis是服务器上的
+server:
+  port: 8989
+spring:
+  datasource:
+    url: jdbc:mysql://47.113.228.96:3306/qz_blog?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: qz_blog
+    password: zhouq
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 5MB
+  redis:
+    host: 47.113.228.96
+    port: 6379
+    password: zhouq
+
+mybatis-plus:
+  configuration:
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+
+oss:
+  accessKey: "P2DJIMWyoHg5UzWrFjSZ4g_sP-9wQpgHQ6uZSihs"
+  secretKey: "cuUBumZGBGbMXjLg39uK0fctUt9NGoSo8gIxEYEy"
+  bucket: "qzhoublog"
+  testRegion: "http://rtls5daj1.hn-bkt.clouddn.com/"
